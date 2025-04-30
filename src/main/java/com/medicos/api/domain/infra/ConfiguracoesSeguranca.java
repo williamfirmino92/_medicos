@@ -51,6 +51,23 @@ public class ConfiguracoesSeguranca {
           // Qualquer outra requisição exige autenticação (login)
           req.anyRequest().authenticated();
         })
+        .formLogin(form -> form
+            // Define a URL da página de login personalizada
+            .loginPage("/login")
+
+            // Define a URL de redirecionamento após login bem-sucedido
+            .defaultSuccessUrl("/")
+
+            // Libera acesso à página de login para todos (mesmo não autenticados)
+            .permitAll())
+
+        // Configuração do logout
+        .logout(logout -> logout
+            // Redireciona para a página de login com parâmetro de logout após sair
+            .logoutSuccessUrl("/login?logout")
+
+            // Permite que qualquer um acesse a URL de logout
+            .permitAll())
 
         .build();
   }
