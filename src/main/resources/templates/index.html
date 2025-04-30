@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta-me</title>
+  <link rel="shortcut icon" th:href="@{/assets/logo.png}" type="image/x-icon">
+  <link rel="stylesheet"  th:href="@{/css/style.css}">
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header-container">
+      <a class="logo" th:href="@{/}" ><img th:src="@{/assets/logo.svg}" alt="" ></a>
+
+        <div class="navbar-form">
+          <a th:href="@{/cadastro}" class="btn-link">Cadastre-se</a>
+          <a th:href="@{/login}" class="btn-link">Login</a>
+          <form th:action="@{/logout}" method="post">
+            <button class="btn-link">Logout</button>
+          </form>
+        
+        </div>
+      </nav>
+    </div>
+  </header>
+
+<div>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-logo">
+        Consulta.me
+        </h1>
+
+        <h2 class="hero-title">Encontre profissionais de <span>diversas especialidades</span></h2>
+        <p class="hero-subtitle">e agende sua consulta com facilidade</p>
+      </div>
+
+      <div class="hero-image">
+        <img th:src="@{/assets/medico.png}" alt="Médico com máscara">
+        <img th:src="@{/assets/medica.png}" alt="Médica com estetoscópio">
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<footer class="footer">
+  <div class="container">
+
+    <p>2025 © Desenvolvido por Aluno | Projeto fictício sem fins comerciais. </p>
+  </div>
+</footer>
+
+</body>
+
+</html>

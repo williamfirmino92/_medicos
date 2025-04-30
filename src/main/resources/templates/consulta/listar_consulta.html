@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta-me</title>
+  <link rel="shortcut icon" th:href="@{/assets/logo.png}" type="image/x-icon">
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container header-container">
+        <a class="logo" th:href="@{/}"><img th:src="@{/assets/logo.svg}" alt=""></a>
+
+      <div class="wrapper">
+        <nav class="main-nav">
+          <ul class="nav-left">
+            <li class="dropdown">
+              <a href="" style="text-decoration: none; color: #000;">CADASTROS <i class="arrow-down"></i></a>
+              <!-- <ul class="dropdown-menu">
+                <li>
+                  <a href="">Médicos</a>
+                </li>
+                <li>
+                  <a href="">Consultas</a>
+                </li>
+              </ul> -->
+            </li>
+          </ul>
+          <ul class="nav-right">
+            <li class="dropdown">
+              <a href="" style="text-decoration: none; color: #000;">OLÁ, <span>WILLIAM</span><i
+                  class="arrow-down"></i></a>
+            </li>
+          </ul>
+          <!-- <div class="navbar-form">
+            <a href="" class="btn-link">Login</a>
+          </div> -->
+        </nav>
+
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2 class="title">Listagem de consultas</h2>
+
+      <div class="table-controls">
+        <a th:href="@{/consultas/cadastrar}"  class="btn btn-tertiary">
+          <img th:src="@{/assets/plus.png}" alt="Ícone de adicionar" class="btn-icon">
+          Nova consulta
+        </a>
+      </div>
+
+      <table class="tabela">
+        <thead>
+          <tr>
+            <th>Medico</th>
+            <th>Especialidade</th>
+            <th>Paciente</th>
+            <th>Data</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr th:each="consulta : ${consultas}" >
+            <td th:text="${consulta.medico.nome}" >Marcelo Moura</td>
+            <td th:text="${consulta.especialidade}" >Nada</td>
+            <td th:text="${consulta.paciente.nome}" >José William Firmino</td>
+            <!-- <td th:text="${consulta.data}" >13/05/2025</td> -->
+            <td th:text="${#temporals.format(consulta.data, 'dd/MM/yyyy HH:mm')}"></td>
+            <td>
+              <a href="#" class="btn btn-icon" title="Editar">
+                <img th:src="@{/assets/edit.svg}" alt="Editar">
+              </a>
+              <a href="#" class="btn btn-icon" data-toggle="modal" data-url="/consultas" title="Excluir">
+                <img th:src="@{/assets/delete.svg}" alt="Excluir">
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+
+  <footer class="footer">
+    <div class="container">
+      <p>2025 © Desenvolvido por Aluno | Projeto fictício sem fins comerciais. </p>
+    </div>
+  </footer>
+
+
+</body>
+
+</html>

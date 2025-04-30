@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="[http://www.thymeleaf.org](http://www.thymeleaf.org)">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title th:text="${title}">Consulta-me - Login</title>
+  <link rel="shortcut icon" th:href="@{/assets/logo.png}" type="image/x-icon">
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+
+
+<body>
+    <header class="header">
+      <div class="container header-container">
+        <a class="logo" th:href="@{/}" ><img th:src="@{/assets/logo.svg}" alt="" ></a>
+  
+          <div class="navbar-form">
+            <a th:href="@{/login}" class="btn-link">Login</a>
+            <a th:href="@{/login/login.html}" class="btn-link">Cadastre-se</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <footer class="footer">
+        <div class="container">
+      
+          <p>2025 © Desenvolvido por Aluno | Projeto fictício sem fins comerciais. </p>
+        </div>
+      </footer>
+</body>

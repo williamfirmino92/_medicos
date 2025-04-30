@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="[http://www.thymeleaf.org](http://www.thymeleaf.org)">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title th:text="${title}">Consulta-me - Login</title>
+  <link rel="shortcut icon" th:href="@{/assets/logo.png}" type="image/x-icon">
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header-container">
+      <a class="logo" th:href="@{/}" ><img th:src="@{/assets/logo.svg}" alt="" ></a>
+        <div class="navbar-form">
+          <a th:href="@{/login/login.html}" class="btn-link">Login</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+
+  <main class="container">
+    <section class="card form-card">
+      <h2 th:text="${title}">Login</h2>
+
+      <form method="post" th:action="@{/login}" >
+        <div class="form-group">
+          <label for="username">Email:</label>
+          <input id="username" name="username" type="email" required="required" th:value="${username}">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Senha:</label>
+          <input id="password" name="password" type="password" required="required" th:value="${password}">
+        </div>
+<!-- 
+        <div class="form-group">
+          <label for="remember-me" class="required">Lembrar de mim:</label>
+          <input id="remember-me" name="remember-me" type="checkbox" class="form-control" required="required">
+        </div> -->
+
+        <button class="btn btn-primary" title="Entrar">Entrar</button>
+
+      </form>
+    </section>
+  </main>
+
+
+  <footer class="footer">
+    <div class="container">
+  
+      <p>2025 © Desenvolvido por Aluno | Projeto fictício sem fins comerciais. </p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta-me - Login</title>
+  <link rel="shortcut icon" href="../assets/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header-container">
+      <a class="logo" href="../index.html"><img src="../assets/logo.png" alt=""></a>
+        <div class="navbar-form">
+          <a href="./login.html" class="btn-link">Login</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+
+  <main class="container">
+    <section class="card form-card">
+      <h2 class="title">Login</h2>
+
+      <form method="post" action="#" >
+        <div class="form-group">
+          <label for="username">Email:</label>
+          <input id="username" name="username" type="email" required="required">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Senha:</label>
+          <input id="password" name="password" type="password" required="required">
+        </div>
+
+        <button class="btn btn-primary" title="Entrar">Entrar</button>
+
+      </form>
+    </section>
+  </main>
+
+
+<footer class="footer">
+  <div class="container">
+    <p>2025 © Desenvolvido por Aluno | Projeto fictício sem fins comerciais. </p>
+  </div>
+</footer>
+
+</body>
+
+</html> -->
