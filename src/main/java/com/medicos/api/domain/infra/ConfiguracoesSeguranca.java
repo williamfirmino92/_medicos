@@ -69,6 +69,10 @@ public class ConfiguracoesSeguranca {
             // Permite que qualquer um acesse a URL de logout
             .permitAll())
 
+        .rememberMe(rememberMe -> rememberMe.key("chave-segura")
+            .alwaysRemember(true)
+            .tokenValiditySeconds(1440))
+
         .build();
   }
 }
